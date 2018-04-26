@@ -16,14 +16,14 @@ const hotelModel = require('../models/HotelsModel');
 
     function filterHotels(req, res) {
         const params = req.body;
-        if (params.value && params.stars) {
-            const result = dataHotels.filter((h) => h.stars == params.stars && h.name == params.value);
+        if (params.search && params.stars) {
+            const result = dataHotels.filter((h) => h.stars == params.stars && h.name == params.search);
             res.status(200).send({
                 status: 1,
                 data: result
             });
-        } else if (params.value) {
-            const result = dataHotels.filter((h) => h.name == params.value);
+        } else if (params.search) {
+            const result = dataHotels.filter((h) => h.name == params.search);
             res.status(200).send({
                 status: 1,
                 data: result

@@ -16,10 +16,6 @@ export class DashboardComponent implements OnInit {
         public _hotelsService: HotelsService,
         public ngZone: NgZone) { }
 
-    search() {
-
-    }
-
     ngOnInit() {
         this.getData();
         window.onresize = (e) => {
@@ -33,6 +29,14 @@ export class DashboardComponent implements OnInit {
         this._hotelsService.getHotels()
             .subscribe((response: any) => {
                 this.hotels = response.data;
+            });
+    }
+
+
+    search(value) {
+        this._hotelsService.filterHotels(value)
+            .subscribe((response: any) => {
+                this.hotels = response;
             });
     }
 
