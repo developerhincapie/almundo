@@ -1,37 +1,20 @@
 <div class="card" *ngFor="let hotel of hotels">
-    <div class="card-content">
-        <div class="content">
-            <div class="columns">
-                <div class="column is-4">
-                    <img [src]="hotel.image" class="contain" alt="Hotel almundo">
-                </div>
-                <div class="column">
-                    <div class="columns fit">
-                        <div class="column is-8 dashed">
-                            <div class="columns">
-                                <div class="column">
-                                    <span class="title title-l is-4">{{hotel.name}}</span>
-                                    <div>
-                                        <span class="icon star-ylw" *ngFor="let star of getStars(hotel.stars)"></span>
-                                    </div>
-                                    <span class="icon amenity" *ngFor="let amenity of hotel.amenities">
-                                        <img [src]="amenity">
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column ">
-                            <p class="is-size-5 has-text-centered">Precio por noche por habitación</p>
-                            <h1 class="title has-text-centered price">ARS
-                                <strong>{{hotel.price | number : '1.0-0'}}</strong>
-                            </h1>
-                            <div class="control is-expanded">
-                                <button type="button" class="button is-large is-link btn-full">Ver Hotel</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-sm-8 col-md-8">
+                <img class="img-fluid card-img-left" [src]="pathImage + hotel.image" alt="Hotel almundo">
+                <p class="title-hotel">{{hotel.name}}</p>
+                <app-icon-star [stars]="hotel.stars" class="stars-icons"></app-icon-star>
+                <span class="amenity" *ngFor="let amenity of hotel.amenities">
+                    <img [src]="pathIcon + amenity + '.svg'">
+                </span>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4  pullapart text-center justify-content-center align-items-center">
+                <p class="title-price">Precio por noche por habitación</p>
+                <h1 class="price">ARS
+                    <strong>{{hotel.price | number : '1.0-0'}}</strong>
+                </h1>
+                <button type="button" class="btn btn-almundo btn-lg btn-block">Ver Hotel</button>
             </div>
         </div>
     </div>

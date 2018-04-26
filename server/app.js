@@ -2,21 +2,18 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 const hotelsRoutes = require('./routes/HotelRouter');
 
+const distDir = __dirname + '/../client/';
+app.use(express.static(distDir));
 app.use(bodyParser.json());
-console.log('')
+app.use(bodyParser.urlencoded({ extended: true }));
 
 /* Agregamos cors en la cabecera de nuestra api.*/
-app.use((req, res, next) => {
-    req.header('Access-Control-Allow-Origin', '*');
-    req.header('Access-Control-Allow-Headers', 'Authorizacion, X-API-KEY, Origin, X-Requested-with, Content-Type, Accept, Access-Control-Allow-Request-Method');
-    req.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS,PUT,DELETE');
-    req.header('Allow', 'GET, POST, OPTIONS,PUT,DELETE');
-    next();
-});
+app.use(cors());
 /**Creamos una ruta para llamada Api para referenciar la api de esa forma. */
 app.use('/api', hotelsRoutes);
 

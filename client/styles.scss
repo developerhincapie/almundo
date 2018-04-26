@@ -2,3 +2,48 @@
 .bg-light{
     background-color: #003378 !important;
 }
+.amenity img {
+    height: 20px;
+}
+.price{
+    color: #e16800;
+}
+.title-hotel{
+    color: #2388bc;
+    font-weight: bold;
+}
+.title-price{
+    color: #8e8e8e;
+}
+.btn-almundo{
+    background: #002979;
+    color: white;
+}
+.pullapart{
+    border-left: 1px dashed #b3b0b0;
+}
+.card{
+    margin-bottom: 21px;
+}
+.card-img-left {
+    border-bottom-left-radius: calc(.25rem - 1px);
+    border-top-left-radius: calc(.25rem - 1px);
+    float: left;
+    padding-right: 1em;
+}
+.card-img-left ~ .card-body {
+    margin-left: 40%;
+}
+.stars {
+    fill: #febb00;
+}
+.stars-icons{
+    display: -webkit-box;
+}
+@media only screen and (max-width: 400px) {
+    .pullapart{
+        border-top: 1px dashed #b3b0b0 !important;
+        border-left: 0px dashed !important;
+        margin-top: 20px;
+    }
+}   
