@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { HotelsService } from './providers/hotels.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     SharedModule
   ],
-  providers: [],
+  providers: [HotelsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
