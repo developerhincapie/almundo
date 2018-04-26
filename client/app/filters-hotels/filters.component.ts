@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,15 +7,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FiltersComponent implements OnInit {
 
+    @Output() public ClickSearch: EventEmitter<any> = new EventEmitter();
+
     private searchForm: FormGroup;
-    private hotels: Array<object>;
     public openFilterName: boolean;
     public openFilterStar: boolean;
     private stars: Array<any>;
     private rowsStar: Array<any>;
 
     constructor(private fb: FormBuilder) {
-        this.hotels = [];
         this.stars = [];
         this.rowsStar = [];
         this.openFilterName = true;
@@ -26,7 +26,6 @@ export class FiltersComponent implements OnInit {
         this.rowsStar = new Array(5);
         this.createForm();
     }
-
     /**
      * Save and delete stars
      * @params {number} numbers stars
@@ -79,24 +78,9 @@ export class FiltersComponent implements OnInit {
         } else if (size > 0 && size < 5) {
             data.stars = this.stars;
         }
-        const query: string = this.parseFilters(data);
+        this.ClickSearch.emit(data);
     }
 
-    /**
-     * Serialize object to stringify parameters '?foo=bar'
-     * @params {object} filters
-     * @returns {string}
-     */
-    parseFilters(filters: object): string {
-        if (!filters) {
-            return '';
-        }
-        let response = '';
-        Object.keys(filters).map(key => {
-            response += `&${key}=${JSON.stringify(filters[key])}`;
-        });
-        return `?${response.substring(1)}`;
-    }
 
     /**
      * Create search form

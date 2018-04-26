@@ -1,20 +1,18 @@
-<section class="container-hotels row">
-    <div class="container-search col-lg-3 text-left">
-       <!-- <form [formGroup]="searchForm">
+<section class="container-hotels">
+    <div class="container-search">
+        <form [formGroup]="searchForm" class="form-inline">
             <p>Filtros</p>
-            <div class="container-input-search">
-                <div class="title position-relative">
-                    <!-- <app-icon-search></app-icon-search>
-                    <span class="color-blue">Nombre del Hotel</span>
-                    <span (click)="openFilters('openFilterName')" class="container-icon" [ngClass]="{'icon-close': openFilterName, 'icon-open': !openFilterName}"></span>
-                </div>
-                <div class="input" [ngClass]="{'open-filter': openFilterName, 'close-filter': !openFilterName}">
-                    <input type="text" placeholder="Ingrese el nombre del hotel" formControlName="search">
-                    <button (click)="filterHotels()" class="btn btn-primary">
-                        Buscar
-                    </button>
-                </div>
+            <!-- <div class="container-input-search">
+                <!-- <app-icon-search></app-icon-search>
+                <span class="color-blue">Nombre del Hotel</span>
+                <span (click)="openFilters('openFilterName')" class="container-icon" [ngClass]="{'icon-close': openFilterName, 'icon-open': !openFilterName}"></span>
+            </div>-->
+            <!--<div class="input" [ngClass]="{'open-filter': openFilterName, 'close-filter': !openFilterName}">-->
+            <div class="form-group mx-sm-2">
+                <label class="sr-only">Nombre del Hotel</label>
+                <input type="text" class="form-control" placeholder="Ingrese el nombre del hotel" formControlName="search">
             </div>
-        </form>-->
+            <button (click)="filterHotels()" class="btn btn-primary">Buscar</button>
+        </form>
     </div>
 </section>

@@ -1,4 +1,6 @@
 import { Component, OnInit, NgZone } from '@angular/core';
+import { HotelsService } from '../providers/hotels.service';
+
 
 @Component({
     selector: 'app-dasboard',
@@ -7,25 +9,31 @@ import { Component, OnInit, NgZone } from '@angular/core';
 })
 
 export class DashboardComponent implements OnInit {
-
+    hotels: any = [];
     isMobile: boolean;
-    
-    constructor(public ngZone: NgZone) {
+
+    constructor(
+        public _hotelsService: HotelsService,
+        public ngZone: NgZone) { }
+
+    search() {
+
     }
 
     ngOnInit() {
+        this.getData();
         window.onresize = (e) => {
             this.ngZone.run(() => {
-                this.isMobile = this.isNotMobileMenu(window.innerWidth);
+                // this.isMobile = this.isNotMobileMenu(window.innerWidth);
             });
         };
     }
 
-    isNotMobileMenu(value) {
-        if (value > 991) {
-            return false;
-        }
-        return true;
+    getData(): void {
+        this._hotelsService.getHotels()
+            .subscribe((response: any) => {
+                this.hotels = response.data;
+            });
     }
 
 }
