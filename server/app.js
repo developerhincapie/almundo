@@ -7,6 +7,7 @@ const app = express();
 const hotelsRoutes = require('./routes/HotelRouter');
 
 app.use(bodyParser.json());
+console.log('')
 
 /* Agregamos cors en la cabecera de nuestra api.*/
 app.use((req, res, next) => {
