@@ -2,14 +2,13 @@
 
 const mongoose = require('mongoose');
 const app = require('./app');
-//const config = require('./config');
-const port = process.env.PORT || 3000;
+const config = require('./config');
 
 
-/*mongoose.Promise = global.Promise;
-mongoose.connect(config.db.url);*/
+mongoose.Promise = global.Promise;
+mongoose.connect(config.db.url);
 
 
-app.listen(port,  (() => {
+app.listen(config.port,  (() => {
     console.log('server corriendo');
 }));

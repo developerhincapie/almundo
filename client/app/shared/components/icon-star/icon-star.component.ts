@@ -7,12 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class IconStarComponent implements OnInit {
 
     @Input()
-    private stars: number;
+    stars: number;
     @Input()
-    private size: number;
+    size: number;
     @Input()
-    private color: number;
-    private array: Array<any>;
+    color: number;
+    array: Array<any>;
 
     constructor() { this.stars = 0; }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, NgZone } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-filters',
@@ -9,11 +9,11 @@ export class FiltersComponent implements OnInit {
 
     @Output() public ClickSearch: EventEmitter<any> = new EventEmitter();
 
-    private searchForm: FormGroup;
+    searchForm: FormGroup;
     public openFilterName: boolean;
     public openFilterStar: boolean;
     private stars: Array<any>;
-    private rowsStar: Array<any>;
+    rowsStar: Array<any>;
 
     constructor(private fb: FormBuilder) {
         this.stars = [];

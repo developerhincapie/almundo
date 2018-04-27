@@ -7,7 +7,7 @@ const cors = require('cors');
 const app = express();
 const hotelsRoutes = require('./routes/HotelRouter');
 
-const distDir = __dirname + '/../client/';
+const distDir = __dirname + '/../dist/client';
 app.use(express.static(distDir));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
