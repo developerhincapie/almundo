@@ -16,14 +16,14 @@ const hotelModel = require('../models/HotelsModel');
 
     function filterHotels(req, res) {
         const params = req.body;
-        if (params.search && params.stars) {
-            const result = dataHotels.filter((h) => h.stars == params.stars && h.name == params.search);
+        if (params.name && params.stars) {
+            const result = dataHotels.filter((h) => h.stars == params.stars && h.name == params.name);
             res.status(200).send({
                 status: 1,
                 data: result
             });
-        } else if (params.search) {
-            const result = dataHotels.filter((h) => h.name == params.search);
+        } else if (params.name) {
+            const result = dataHotels.filter((h) => h.name == params.name);
             res.status(200).send({
                 status: 1,
                 data: result
@@ -35,9 +35,9 @@ const hotelModel = require('../models/HotelsModel');
                 data: result
             });
         } else {
-            res.status(500).send({
+            res.status(200).send({
                 status: 0,
-                data: 'Petición invalida, faltan campos.'
+                data: dataHotels
             });
         }
     }

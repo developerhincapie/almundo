@@ -1,10 +1,10 @@
-<div class="card" *ngFor="let hotel of data">
+<div class="card hotels-card" *ngFor="let hotel of data">
     <div class="card-body">
         <div class="row">
             <div class="col-12 col-sm-8 col-md-8">
                 <img class="img-fluid card-img-left" [src]="pathImage + hotel.image" alt="Hotel almundo">
                 <p class="title-hotel">{{hotel.name}}</p>
-                <app-icon-star [stars]="hotel.stars" class="stars-icons"></app-icon-star>
+                <app-icon-star [stars]="hotel.stars" class="stars stars-icons"></app-icon-star>
                 <span class="amenity" *ngFor="let amenity of hotel.amenities">
                     <img [src]="pathIcon + amenity + '.svg'">
                 </span>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { IconStarComponent } from './components/icon-star/icon-star.component';
+import { IconSearchComponent } from './components/icon-search/icon-search.component';
 
 @NgModule({
     imports: [
@@ -12,13 +13,15 @@ import { IconStarComponent } from './components/icon-star/icon-star.component';
     ],
     declarations: [
         NavbarComponent,
-        IconStarComponent
+        IconStarComponent,
+        IconSearchComponent
     ],
     exports: [
         FormsModule,
         ReactiveFormsModule,
         NavbarComponent,
-        IconStarComponent
+        IconStarComponent,
+        IconSearchComponent
     ]
 })
 

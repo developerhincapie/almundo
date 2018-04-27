@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
     search(value) {
         this._hotelsService.filterHotels(value)
             .subscribe((response: any) => {
-                this.hotels = response;
+                this.hotels = response.data;
             });
     }
 

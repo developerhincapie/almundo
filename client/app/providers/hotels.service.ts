@@ -12,6 +12,6 @@ export class HotelsService {
     }
 
     filterHotels(data) {
-        return this.http.post(`${AppSettings.Api}/search-hotels`, JSON.stringify(data));
+        return this.http.post(`${AppSettings.Api}/search-hotels`, data);
     }
 }

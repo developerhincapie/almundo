@@ -8,6 +8,9 @@
 .price{
     color: #e16800;
 }
+.hotels-card{
+    margin-top: 10px;
+}
 .title-hotel{
     color: #2388bc;
     font-weight: bold;
@@ -46,4 +49,98 @@
         border-left: 0px dashed !important;
         margin-top: 20px;
     }
+    .container-input-search{
+        display: none;
+    }
+    .card-almundo{
+        width: 100%;
+    }
+
+    .container-stars{
+        display: none;
+    }
+
 }   
+
+
+.container-hotels.row {
+    padding: 20px;
+    margin: 0;
+  }
+  
+  .stars, .row-star {
+    fill: #febb00;
+  }
+  
+  .color-price {
+    color: #e26800;
+  }
+  
+  .container-icon {
+    cursor: pointer;
+    right: 0;
+    top: 5px;
+  }
+  
+  .open-filter {
+    display: block;
+    -webkit-transition: display 3s ease-out;
+    -moz-transition: display 3s ease-out;
+    -o-transition: display 3s ease-out;
+    transition: display 3s ease-out;
+  }
+  
+  .close-filter {
+    display: none;
+    -webkit-transition: display 3s ease-out;
+    -moz-transition: display 3s ease-out;
+    -o-transition: display 3s ease-out;
+    transition: display 3s ease-out;
+  }
+  
+  .icon-open:before {
+    content: "";
+    border-top: 10px solid #097ab4;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    position: absolute;
+    right: 0;
+    top: 5px;
+  }
+  
+  .icon-close:before {
+    content: "";
+    border-bottom: 10px solid #097ab4;
+    border-left: 10px solid transparent;
+    border-right: 9px solid transparent;
+    position: absolute;
+    right: 0;
+    top: 5px;
+  }
+  
+  .background-button {
+    background: #002978;
+    border: 1px solid #002978;
+  }
+  
+  .card-almundo{
+    padding: 11px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 2px 0 rgba(0,0,0,0.2);
+  }
+
+  @media (max-width: 768px) {
+    .container-list-hotels .container-hotel-detail .container-detail {
+      border-right: none;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border-bottom: 3px dotted #eeeeee;
+    }
+    .container-hotels .container-search {
+      padding: 0;
+      width:100%;
+      margin: 0;
+      text-align: center !important;  
+      color: #2388bc;
+    }
+  }

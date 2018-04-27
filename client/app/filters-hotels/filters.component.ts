@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, NgZone } from '@angular/forms';
 
 @Component({
     selector: 'app-filters',
@@ -25,11 +25,9 @@ export class FiltersComponent implements OnInit {
     ngOnInit() {
         this.rowsStar = new Array(5);
         this.createForm();
+
     }
-    /**
-     * Save and delete stars
-     * @params {number} numbers stars
-     */
+
     selectStar(stars) {
         const size = this.stars.length;
         if (this.searchForm.get(`star${stars}`).value) {
@@ -81,10 +79,6 @@ export class FiltersComponent implements OnInit {
         this.ClickSearch.emit(data);
     }
 
-
-    /**
-     * Create search form
-     */
     createForm() {
         this.searchForm = this.fb.group({
             search: [''],
